@@ -11,9 +11,13 @@ A case study on certificate pinning
 
 Certificate pinning is a concept of allowing only the particular domains whose certificates are pinned within the client app instead of allowing all trusted certificates, Certificate Pinning is mainly used to reduce MITM(Man in the Middle) attacks
 
+![MITM](/learn/assets/mitmdiagram.png)
+
+
 #### Advantages of Certificate Pinning
 * Certificate Pinning protects data tampering even if user installs a malicious CA with/without knowing
 * If trusted certificate authority gets compromised due to a security [vulnerability](https://en.wikipedia.org/wiki/Certificate_authority#CA_compromise)
+
 
 #### Web Certificate Pinning
 Web certificate pinning is a dynamic pinning, It was [introduced](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning) in 2015, Soon after in 2018 it was deprecated, Mainly due to it created new set of vulnerabilities than resolving the actual [problem](https://scotthelme.co.uk/using-security-features-to-do-bad-things/).
