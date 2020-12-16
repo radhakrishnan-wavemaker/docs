@@ -13,13 +13,15 @@ A case study on certificate pinning
 
 Certificate pinning is an additional layer of security which protects communication between client and server, The Standard HTTPS verifies whether the connection is secure but It will not verify whether the server is the correct one.
 
+We will never known whether we are communicating with the actual server or a intercepted server.
+
 ![MITM](/learn/assets/mitmdiagram.png)
 
 
 #### What Certificate Pinning offers
 Standard HTTPS checks only whether the connection is secure. Along with the HTTPS, we use certificate pinning which will verify "Server has the known certificate"
 
-The application will have the pinned certificate which is the known certificate, During all communication between the client and server we will expect server's certificate should match with the pinned certificate.
+The application will have the pinned certificate which is the known certificate, During all the communication between the client and server we will expect server's certificate should match with the pinned certificate.
 
 ![MITM](/learn/assets/nomitmdiagram.png)
 
@@ -30,22 +32,22 @@ The application will have the pinned certificate which is the known certificate,
 
 
 #### Web Certificate Pinning
-Web certificate pinning is a dynamic pinning, Certificates are pinned during the connection establishment ,It was [introduced](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning) in 2015, Soon after in 2018 it was deprecated, Mainly due to it created new set of vulnerabilities than resolving the actual [problem](https://scotthelme.co.uk/using-security-features-to-do-bad-things/).
+Web certificate pinning is a dynamic pinning, Certificates are pinned during the initial connection establishment ,It was [introduced](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning) in 2015, Soon after in 2018 it was deprecated, Mainly due to it created new set of vulnerabilities than resolving the actual [problem](https://scotthelme.co.uk/using-security-features-to-do-bad-things/).
 
 #### Mobile Certificate Pinning
-Mobile certificate pinning is a static pinning, In which certificate will be bundled within the app during release and expected to deploy a new app release on certificate expiry.
+Mobile certificate pinning is a static pinning, In which certificate will be bundled within the app during release and expected to deploy a new release on certificate expiry.
 
 
 ### Problem associated with Certificate Pinning
 Security reachers had [warned](https://scotthelme.co.uk/im-giving-up-on-hpkp/) risk on using HTTP Certificate Pinning
 
 * If the key was accidentally deleted / stolen / hacked, We will face serious application down time [issues](https://www.smashingmagazine.com/be-afraid-of-public-key-pinning/).
-* Domain hijacking for Ransom - Hacker may mishandle the certificate.
+* Domain hijacking - On Domain hijacking we will lose control of certificates, Hijacker can mishandle our certificates.
 
 ### What's next ?
 [Certificate Transparency(CT)](http://www.certificate-transparency.org/what-is-ct) was introduced in 2018 after deprecation of Web Certificate Pinning, CT is an open source framework for monitoring and auditing certificates,
 
-This standard creates a public logger which records all the issued certificates by the trusted CA, We can monitor these logger to detect mistakenly issued certificates, detect compromised CA and CA dishonesty.
+This standard creates a public logger which records all the issued certificates by the trusted CA, We can monitor these logger to detect mistakenly issued certificates, compromised CA and CA dishonesty.
 
 CT in [OpenSSL](http://www.certificate-transparency.org/certificate-transparency-in-openssl), whenever connection is initiated, SSL certificates's timestamp will be used to fetch the certificate from the CT log and compared to establish the connection.
 
