@@ -13,7 +13,7 @@ A case study on certificate pinning
 
 Certificate pinning is an additional layer of security which protects communication between client and server, The Standard HTTPS verifies whether the connection is secure but It will not verify whether the server is the correct one.
 
-We will never known whether we are communicating with the actual server or a intercepted server.
+We will never known whether we are communicating with the actual server or an intercepted server.
 
 ![MITM](/learn/assets/mitmdiagram.png)
 
