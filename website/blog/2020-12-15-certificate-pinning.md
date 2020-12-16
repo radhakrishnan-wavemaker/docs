@@ -7,23 +7,33 @@ A case study on certificate pinning
 
 <!--truncate-->
 
-### Introduction to Certificate Pinning
 
-Certificate pinning is a concept of allowing only the particular domains whose certificates are pinned within the client app instead of allowing all trusted certificates, Certificate Pinning is mainly used to reduce MITM(Man in the Middle) attacks
+
+### Introduction
+
+Certificate pinning is an additional layer of security which protects communication between client and server, The Standard HTTPS verifies whether the connection is secure but It will not verify whether the server is the correct one.
 
 ![MITM](/learn/assets/mitmdiagram.png)
 
 
+#### What Certificate Pinning offers
+Standard HTTPS checks only whether the connection is secure. Along with the HTTPS, we use certificate pinning which will verify "Server has the known certificate"
+
+The application will have the pinned certificate which is the known certificate, During all communication between the client and server we will expect server's certificate should match with the pinned certificate.
+
+![MITM](/learn/assets/nomitmdiagram.png)
+
+
 #### Advantages of Certificate Pinning
 * Certificate Pinning protects data tampering even if user installs a malicious CA with/without knowing
-* If trusted certificate authority gets compromised due to a security [vulnerability](https://en.wikipedia.org/wiki/Certificate_authority#CA_compromise)
+* If trusted certificate authority gets compromised due to a security [vulnerability](https://en.wikipedia.org/wiki/Certificate_authority#CA_compromise) our application will not get affected
 
 
 #### Web Certificate Pinning
-Web certificate pinning is a dynamic pinning, It was [introduced](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning) in 2015, Soon after in 2018 it was deprecated, Mainly due to it created new set of vulnerabilities than resolving the actual [problem](https://scotthelme.co.uk/using-security-features-to-do-bad-things/).
+Web certificate pinning is a dynamic pinning, Certificates are pinned during the connection establishment ,It was [introduced](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning) in 2015, Soon after in 2018 it was deprecated, Mainly due to it created new set of vulnerabilities than resolving the actual [problem](https://scotthelme.co.uk/using-security-features-to-do-bad-things/).
 
 #### Mobile Certificate Pinning
-Mobile certificate pinning is a static pinning, In which public certificate will be bundled within the app during release and expected to deploy a new app release on certificate expiry.
+Mobile certificate pinning is a static pinning, In which certificate will be bundled within the app during release and expected to deploy a new app release on certificate expiry.
 
 
 ### Problem associated with Certificate Pinning
