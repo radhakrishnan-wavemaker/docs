@@ -19,7 +19,7 @@ Certificate pinning is an additional layer of security which protects communicat
 #### What Certificate Pinning offers
 Standard HTTPS checks only whether the connection is secure. Along with the HTTPS, we use certificate pinning which will verify whether we are communicating with the actual server.
 
-The application will have these pinned certificates which are pre-defined known certificates, During all the communication between the client and server we will expect server's certificate should match with any one of the pinned certificates.If it doesn't matches we will terminate the communication.
+The application will have the pinned certificates which are pre-defined known certificates, During all the communication between the client and server we will expect server's certificate should match with any one of the pinned certificates.If it doesn't matches we will terminate the communication.
 
 ![MITM](/learn/assets/nomitmdiagram.png)
 
