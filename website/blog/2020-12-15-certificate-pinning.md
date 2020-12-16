@@ -11,7 +11,7 @@ A case study on certificate pinning
 
 ### Introduction
 
-Certificate pinning is an additional layer of security which protects communication between client and server, The Standard HTTPS verifies whether the connection is secure but It will not verify whether the server is the correct one.
+Certificate pinning is an additional layer of security which protects communication between client and server, The Standard HTTPS verifies whether the connection is secure but It cannot verify whether it is communicating with the actual server.
 
 We will never known whether we are communicating with the actual server or an intercepted server.
 
@@ -19,9 +19,9 @@ We will never known whether we are communicating with the actual server or an in
 
 
 #### What Certificate Pinning offers
-Standard HTTPS checks only whether the connection is secure. Along with the HTTPS, we use certificate pinning which will verify "Server has the known certificate"
+Standard HTTPS checks only whether the connection is secure. Along with the HTTPS, we use certificate pinning which will verify whether we are communicating with the actual server.
 
-The application will have the pinned certificate which is the known certificate, During all the communication between the client and server we will expect server's certificate should match with the pinned certificate.
+The application will have these pinned certificates which are pre-defined known certificates, During all the communication between the client and server we will expect server's certificate should match with any one of the pinned certificates.If it doesn't matches we will terminate the communication.
 
 ![MITM](/learn/assets/nomitmdiagram.png)
 
