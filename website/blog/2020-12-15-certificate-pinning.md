@@ -13,7 +13,7 @@ A case study on certificate pinning
 
 <!-- In HTTPS handshake,Browser requests Certificate Authority (CA) to validate the certificate provided by a server. If CA or Root certificate is compromised, then client may face man the middle (MTM) attacks. To protect its users from this vulnerability, an app can employ SSL pinning technique. -->
 
-In HTTPS handshake, Server responds with public certificate issued by Certificate Authority (CA) to establish connection. If CA or Root certificate was compromised and issues certificates without domain owners contestant, then client may face man in the middle (MTM) attacks. To protect users from this vulnerability, an app can employ SSL pinning.
+In HTTPS handshake, Server responds with public certificate issued by Certificate Authority (CA) to establish connection. If CA or Root certificate was compromised and issues certificates without domain owners consent, then client may face man in the middle (MTM) attacks. To protect users from this vulnerability, an app can employ SSL pinning.
 
 
 <!-- Certificate pinning is an additional layer of security which protects communication between client and server, The Standard HTTPS verifies whether the connection is secure but It cannot verify whether we are communicating with the actual server or an intercepted server. -->
@@ -24,7 +24,7 @@ In HTTPS handshake, Server responds with public certificate issued by Certificat
 #### What Certificate Pinning offers
 Standard HTTPS checks only whether the connection is secure. Along with the HTTPS, we use certificate pinning which will verify whether we are communicating with the actual server.
 
-The application will have the pinned certificates which are pre-defined known certificates, During all the communication between the client and server we will expect server's certificate should match with any one of the pinned certificates.If it doesn't matches we will terminate the communication.
+The application will have the pinned certificates which are pre-defined known certificates. During all the communication between the client and server, we will expect server's certificate should match with any one of the pinned certificates, If it doesn't match we will terminate the communication.
 
 ![MITM](/learn/assets/nomitmdiagram.png)
 
