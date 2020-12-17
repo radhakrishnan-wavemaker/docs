@@ -11,7 +11,12 @@ A case study on certificate pinning
 
 ### Introduction
 
-Certificate pinning is an additional layer of security which protects communication between client and server, The Standard HTTPS verifies whether the connection is secure but It cannot verify whether we are communicating with the actual server or an intercepted server.
+<!-- In HTTPS handshake,Browser requests Certificate Authority (CA) to validate the certificate provided by a server. If CA or Root certificate is compromised, then client may face man the middle (MTM) attacks. To protect its users from this vulnerability, an app can employ SSL pinning technique. -->
+
+In HTTPS handshake, Server responds with public certificate issued by Certificate Authority (CA) to establish connection. If CA or Root certificate was compromised and issues certificates without domain owners contestant, then client may face man in the middle (MTM) attacks. To protect users from this vulnerability, an app can employ SSL pinning.
+
+
+<!-- Certificate pinning is an additional layer of security which protects communication between client and server, The Standard HTTPS verifies whether the connection is secure but It cannot verify whether we are communicating with the actual server or an intercepted server. -->
 
 ![MITM](/learn/assets/mitmdiagram.png)
 
@@ -54,4 +59,5 @@ CT in [OpenSSL](http://www.certificate-transparency.org/certificate-transparency
 Though CT is different from certificate pinning, It will effectively replace the certificate pinning without compromising the quality of service.
 
 we are always open to adapt latest technology trends. If there is anything in your mind that WaveMaker should have, do let us know [here](mailto:info@wavemaker.com).
+
 
