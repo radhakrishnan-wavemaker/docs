@@ -30,19 +30,19 @@ The application will have the pinned certificates which are pre-defined known ce
 
 
 #### Advantages of Certificate Pinning
-* Certificate Pinning protects data tampering even if user installs a malicious CA with/without knowing
-* If trusted certificate authority gets compromised due to a security [vulnerability](https://en.wikipedia.org/wiki/Certificate_authority#CA_compromise) our application will not get affected
+* Certificate Pinning protects data tampering even if user installs a malicious CA with/without knowing.
+* If trusted certificate authority gets compromised due to a security [vulnerability](https://en.wikipedia.org/wiki/Certificate_authority#CA_compromise) our application will not get affected.
 
 
 #### Web Certificate Pinning
-Web certificate pinning is a dynamic pinning, Certificates are pinned during the initial connection establishment ,It was [introduced](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning) in 2015, Soon after in 2018 it was deprecated, Mainly due to it created new set of vulnerabilities than resolving the actual [problem](https://scotthelme.co.uk/using-security-features-to-do-bad-things/).
+Web Certificate Pinning is a dynamic pinning, Certificates are pinned during the initial connection establishment, It was [introduced](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning) in 2015, Soon after in 2018 it was deprecated, Mainly due to it created new set of vulnerabilities than resolving the actual [problem](https://scotthelme.co.uk/using-security-features-to-do-bad-things/).
 
 #### Mobile Certificate Pinning
 Mobile certificate pinning is a static pinning, In which certificate will be bundled within the app during release and expected to deploy a new release on certificate expiry.
 
 
 ### Problem associated with Certificate Pinning
-Security reachers had [warned](https://scotthelme.co.uk/im-giving-up-on-hpkp/) risk on using HTTP Certificate Pinning
+Security reachers had [warned](https://scotthelme.co.uk/im-giving-up-on-hpkp/) risk on using HTTP Certificate Pinning.
 
 * If the key was accidentally deleted / stolen / hacked, We will face serious application down time [issues](https://www.smashingmagazine.com/be-afraid-of-public-key-pinning/).
 * Domain hijacking - On Domain hijacking we will lose control of certificates, Hijacker can mishandle our certificates.
